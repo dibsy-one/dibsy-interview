@@ -1,0 +1,32 @@
+1- create PaymentNotFoundException and InvalidPaymentStateException
+
+2- implement these endpoints of request response
+
+POST /api/v1/payments/PAY-12345/refund
+Content-Type: application/json
+
+{
+  "reason": "Customer requested refund"
+}
+
+SUCCESS: 200
+{
+  "paymentId": "PAY-12345",
+  "refundId": "REF-abc123",
+  "amount": 99.99,
+  "currency": "EUR",
+  "status": "REFUNDED",
+  "refundedAt": "2025-01-21T10:30:00Z"
+}
+
+NOT FOUND: 404
+{
+  "error": "Payment not found: PAY-99999",
+  "timestamp": "2025-01-21T10:30:00Z"
+}
+
+INVALID: 400
+{
+  "error": "Payment cannot be refunded. Current status: FAILED",
+  "timestamp": "2025-01-21T10:30:00Z"
+}
