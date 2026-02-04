@@ -1,6 +1,6 @@
 # Payment Refund API - Live Coding Exercise
 
-## Time Limit: 10 minutes
+## Time Limit: 20 minutes
 
 ---
 
